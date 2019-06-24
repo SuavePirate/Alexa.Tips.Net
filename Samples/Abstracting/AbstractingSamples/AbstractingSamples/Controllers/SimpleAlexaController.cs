@@ -1,4 +1,5 @@
-﻿using Alexa.NET.Request;
+﻿using AbstractingSamples.Handlers.Definition;
+using Alexa.NET.Request;
 using Alexa.NET.Response;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -11,9 +12,16 @@ namespace AbstractingSamples.Controllers
     [Route("[controller]")]
     public class SimpleAlexaController : Controller
     {
+        private readonly ICollection<IHandler> _handlers;
+        public SimpleAlexaController(ICollection<IHandler> handlers)
+        {
+            _handlers = handlers;
+        }
         [HttpPost]
         public async Task<SkillResponse> HandleRequest([FromBody]SkillRequest request)
         {
+            var viableHandlers = _handlers.Where(h => h.RequestType == request.GetRequestType());
+
             return null;
         }
     }
