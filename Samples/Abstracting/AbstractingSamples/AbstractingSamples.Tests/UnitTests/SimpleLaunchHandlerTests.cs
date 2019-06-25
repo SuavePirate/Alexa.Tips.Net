@@ -6,7 +6,7 @@ using System;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace AbstractingSamples.Tests
+namespace AbstractingSamples.Tests.UnitTests
 {
     public class SimpleLaunchHandlerTests : IClassFixture<SimpleLaunchHandler>
     {

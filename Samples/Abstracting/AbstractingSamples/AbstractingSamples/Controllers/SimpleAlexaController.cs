@@ -20,9 +20,8 @@ namespace AbstractingSamples.Controllers
         [HttpPost]
         public async Task<SkillResponse> HandleRequest([FromBody]SkillRequest request)
         {
-            var viableHandlers = _handlers.Where(h => h.RequestType == request.GetRequestType());
-
-            return null;
+            var viableHandler = _handlers.FirstOrDefault(h => h.CanHandle(request));
+            return await viableHandler.HandleAsync(request);
         }
     }
 }

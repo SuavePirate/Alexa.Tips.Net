@@ -16,4 +16,8 @@
     <ProjectReference Include="..\AbstractingSamples\AbstractingSamples.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="IntegrationTests\" />
+  </ItemGroup>
+
 </Project>

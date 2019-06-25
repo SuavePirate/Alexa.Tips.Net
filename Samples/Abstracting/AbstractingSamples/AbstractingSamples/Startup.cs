@@ -32,7 +32,8 @@ namespace AbstractingSamples
             {
                 return new List<IHandler>
                 {
-                    new SimpleLaunchHandler()
+                    new SimpleLaunchHandler(),
+                    new DogFactHandler()
                 };
             });
 
